@@ -1,0 +1,1 @@
+@Analyzed = new Mongo.Collection 'analyzed'
