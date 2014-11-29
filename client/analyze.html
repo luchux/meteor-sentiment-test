@@ -1,0 +1,57 @@
+<body>
+    <div class="container">
+        <div class="row">
+         {{> NewPhrase}}
+        </div>
+
+        <div class="row">
+            {{> Analyzed}}
+        </div>
+    </div>
+</body>
+
+<template name="NewPhrase">
+    <div class="col-xs-12">
+        <form role="form">
+            <div class="form-group">
+                <label for="phrase">write phrase to analyze</label>
+                <input name="phrase" class="form-control" id="phrase">
+            </div>
+            <button class="btn btn-primary" id="submit">Analyze</button>
+        </form>
+    </div>
+</template>
+
+<template name="Analyzed">
+    {{#each phrases}}
+        <div class="row">
+            {{> Phrase}}
+        </div>
+        <hr>
+    {{/each}}
+</template>
+
+<template name="Phrase">
+    <div class="col-xs-12 col-sm-8">
+        <p><strong>{{phrase}}</strong></p>
+        <div class="row">
+            <strong>pos: </strong>
+            {{#each positive}}
+                <span class="label label-success">{{this}}</span>
+            {{/each}}
+        </div>
+
+        <div class="row">
+            <strong>neg: </strong>
+            {{#each negative}}
+                <span class="label label-danger">{{this}}</span>
+            {{/each}}
+        </div>
+
+
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <p>score: {{score}}</p>
+        <p>comparative: {{comparative}}</p>
+    </div>
+</template>
