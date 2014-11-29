@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "sentiment": {
+      "version": "1.0.2",
+      "dependencies": {
+        "extend-object": {
+          "version": "1.0.0"
+        }
+      }
+    }
+  }
+}
